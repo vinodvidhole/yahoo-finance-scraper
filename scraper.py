@@ -50,11 +50,11 @@ if __name__ == "__main__" :
   print(f'Found {table_rows} Tickers')
   
   print('Parsing Trending tickers videos')
-  ticker_data = [parse_table(i, driver) for i in range (2, table_rows + 1)]
+  ticker_data = [parse_table(i, driver) for i in range (1, table_rows + 1)]
 
   print('Save the data to a CSV')
   videos_df = pd.DataFrame(ticker_data)
   print(videos_df)
   videos_df.to_csv('trending.csv', index=None)
 
-print("End")
+print("Processing Done")
