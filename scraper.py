@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
+import pandas as pd 
 
 YAHOO_FINANCE_URL = 'https://finance.yahoo.com/trending-tickers'
 
@@ -18,15 +19,15 @@ def get_table(driver):
     tablerows = len(driver.find_elements(By.XPATH, value="//table[@class= '{}']/tbody/tr".format(TABLE_CLASS)))
     return tablerows
   
-def parse_table(table_driver):
-  Symbol = table_driver.find_element(By.XPATH, value="//tr[{}]/td[1]".format(i)).text
-  Name = table_driver.find_element(By.XPATH, value="//tr[{}]/td[2]".format(i)).text
-  LastPrice = table_driver.find_element(By.XPATH, value="//tr[{}]/td[3]".format(i)).text
-  MarketTime = table_driver.find_element(By.XPATH, value="//tr[{}]/td[4]".format(i)).text
-  Change = table_driver.find_element(By.XPATH, value="//tr[{}]/td[5]".format(i)).text
-  PercentChange = table_driver.find_element(By.XPATH, value="//tr[{}]/td[6]".format(i)).text	
-  Volume = table_driver.find_element(By.XPATH, value="//tr[{}]/td[7]".format(i)).text
-  MarketCap = table_driver.find_element(By.XPATH, value="//tr[{}]/td[8]".format(i)).text	
+def parse_table(rownum, table_driver):
+  Symbol = table_driver.find_element(By.XPATH, value="//tr[{}]/td[1]".format(rownum)).text
+  Name = table_driver.find_element(By.XPATH, value="//tr[{}]/td[2]".format(rownum)).text
+  LastPrice = table_driver.find_element(By.XPATH, value="//tr[{}]/td[3]".format(rownum)).text
+  MarketTime = table_driver.find_element(By.XPATH, value="//tr[{}]/td[4]".format(rownum)).text
+  Change = table_driver.find_element(By.XPATH, value="//tr[{}]/td[5]".format(rownum)).text
+  PercentChange = table_driver.find_element(By.XPATH, value="//tr[{}]/td[6]".format(rownum)).text	
+  Volume = table_driver.find_element(By.XPATH, value="//tr[{}]/td[7]".format(rownum)).text
+  MarketCap = table_driver.find_element(By.XPATH, value="//tr[{}]/td[8]".format(rownum)).text	
 
   return {
   'Symbol': Symbol,
@@ -45,34 +46,15 @@ if __name__ == "__main__" :
   
   print('Fetching the page')
   table_rows = get_table(driver)
-  
-  #VALUE_EXPRESSION='//table[@class="W(100%)"]//tr' for row count
-  TABLE_CLASS = "W(100%)"
-  
-  # to identify the table rows
-  r = driver.find_elements(By.XPATH, value="//table[@class= '{}']/tbody/tr".format(TABLE_CLASS))
-  # to identify table columns
-  #c = driver.find_elements(By.XPATH, value="//*[@class= '{}']/tbody/tr[1]/td".format(TABLE_CLASS))
-  # to get row count with len method
-  rc = len (r)
-  print('rc ', rc)
-  
-  # to get column count with len method
-  #cc = len (c)
-  #print('c ', cc)
-  
-  # to traverse through the table rows excluding headers
-  for i in range (2, table_rows + 1) :
-    print(i)
-    # to traverse through the table column
-    """    
-    for j in range (1, cc + 1) :
-    # to get all the cell data with text method
-      d = driver.find_element(By.XPATH, value="//tr["+str(i)+"]/td["+str(j)+"]").text
-      print(i, j)
-      print (d)
-    """
 
+  print(f'Found {table_rows} Tickers')
+  
+  print('Parsing Trending tickers videos')
+  ticker_data = [parse_table(i, driver) for i in range (2, table_rows + 1)]
 
+  print('Save the data to a CSV')
+  videos_df = pd.DataFrame(ticker_data)
+  print(videos_df)
+  videos_df.to_csv('trending.csv', index=None)
 
 print("End")
