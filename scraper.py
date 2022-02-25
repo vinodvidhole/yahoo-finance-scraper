@@ -13,13 +13,13 @@ def get_driver():
   driver = webdriver.Chrome(options=chrome_options)
   return driver
   
-def get_table(driver):
+def get_tickers(driver):
     TABLE_CLASS = "W(100%)"  
     driver.get(YAHOO_FINANCE_URL)
     tablerows = len(driver.find_elements(By.XPATH, value="//table[@class= '{}']/tbody/tr".format(TABLE_CLASS)))
     return tablerows
   
-def parse_table(rownum, table_driver):
+def parse_ticker(rownum, table_driver):
   Symbol = table_driver.find_element(By.XPATH, value="//tr[{}]/td[1]".format(rownum)).text
   Name = table_driver.find_element(By.XPATH, value="//tr[{}]/td[2]".format(rownum)).text
   LastPrice = table_driver.find_element(By.XPATH, value="//tr[{}]/td[3]".format(rownum)).text
@@ -45,12 +45,12 @@ if __name__ == "__main__" :
   driver = get_driver()
   
   print('Fetching the page')
-  table_rows = get_table(driver)
+  table_rows = get_tickers(driver)
 
   print(f'Found {table_rows} Tickers')
   
   print('Parsing Trending tickers')
-  ticker_data = [parse_table(i, driver) for i in range (1, table_rows + 1)]
+  ticker_data = [parse_ticker(i, driver) for i in range (1, table_rows + 1)]
 
   print('Save the data to a CSV')
   videos_df = pd.DataFrame(ticker_data)
