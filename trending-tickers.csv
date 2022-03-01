@@ -1,31 +1,31 @@
 Symbol,Name,LastPrice,MarketTime,Change,PercentChange,Volume,MarketCap
-FL,"Foot Locker, Inc.",29.07,4:00PM EST,-12.34,-29.80%,37.994M,2.918B
-CARG,"CarGurus, Inc.",46.44,4:00PM EST,+14.18,+43.96%,8.916M,5.465B
-REGI,"Renewable Energy Group, Inc.",43.81,4:00PM EST,+0.75,+1.74%,1.561M,2.202B
-CLF,Cleveland-Cliffs Inc.,21.51,4:00PM EST,+2.11,+10.88%,32.791M,11.302B
-RH,RH,396.32,4:00PM EST,+13.88,+3.63%,"470,925",8.508B
-ISPO,Inspirato Incorporated,54.90,4:00PM EST,+18.41,+50.45%,3.321M,2.577B
-BTE.TO,Baytex Energy Corp.,5.71,4:00PM EST,+0.71,+14.20%,20.204M,3.222B
-ABBV,AbbVie Inc.,149.54,4:02PM EST,+4.27,+2.94%,8.317M,264.499B
-X,United States Steel Corporation,26.91,4:00PM EST,+2.55,+10.47%,27.932M,7.022B
-NUE,Nucor Corporation,130.05,4:00PM EST,+9.15,+7.57%,4.711M,35.374B
-JNJ,Johnson & Johnson,166.00,4:00PM EST,+7.86,+4.97%,11.062M,436.459B
-SE,Sea Limited,137.46,4:00PM EST,+14.71,+11.98%,13.398M,76.667B
-FCX,Freeport-McMoRan Inc.,46.34,4:02PM EST,+2.62,+5.99%,28.943M,67.415B
-TAL,TAL Education Group,2.9100,4:00PM EST,-0.7400,-20.27%,29.57M,1.877B
-CVX,Chevron Corporation,140.38,4:02PM EST,+5.53,+4.10%,27.817M,270.609B
-FUV,"Arcimoto, Inc.",5.70,4:00PM EST,+0.63,+12.43%,5.144M,214.683M
-MULN,"Mullen Automotive, Inc.",0.6880,4:00PM EST,+0.0690,+11.15%,104.794M,24.04M
-LMT,Lockheed Martin Corporation,409.49,4:02PM EST,+13.78,+3.48%,3.12M,111.515B
-CM.TO,Canadian Imperial Bank of Commerce,163.61,4:00PM EST,+8.71,+5.62%,2.063M,73.782B
-MOS,The Mosaic Company,49.53,4:03PM EST,+4.18,+9.22%,12.133M,18.263B
-ZOM,Zomedica Corp.,0.3492,4:00PM EST,-0.0120,-3.32%,23.376M,342.179M
-BRK-B,Berkshire Hathaway Inc.,319.24,4:06PM EST,+10.96,+3.56%,7.481M,712.786B
-PYPL,"PayPal Holdings, Inc.",110.94,4:00PM EST,+5.92,+5.64%,33.171M,129.245B
-CYDY,CytoDyn Inc.,0.5100,3:59PM EST,+0.0630,+14.09%,2.703M,352.019M
-U-UN.TO,Sprott Physical Uranium Trust Fund,15.83,4:00PM EST,+1.08,+7.32%,8.637M,2.573B
-WTRH,Waitr Holdings Inc.,0.5713,4:00PM EST,+0.1224,+27.27%,8.543M,82.449M
-UUU,"Universal Security Instruments, Inc.",3.9600,4:00PM EST,+0.9800,+32.89%,19.81M,9.159M
-SLCA,"U.S. Silica Holdings, Inc.",14.09,4:00PM EST,+2.29,+19.41%,6.862M,1.051B
-GFAI,"Guardforce AI Co., Limited",0.5979,4:00PM EST,+0.1868,+45.44%,26.129M,17.412M
-IMPP,Imperial Petroleum Inc.,2.1000,4:00PM EST,+0.5300,+33.76%,131.387M,N/A
+LCID,"Lucid Group, Inc.",28.98,4:00PM EST,+2.63,+9.98%,45.276M,47.712B
+ZM,"Zoom Video Communications, Inc.",132.60,4:00PM EST,+7.28,+5.81%,11.074M,39.514B
+MULN,"Mullen Automotive, Inc.",1.6900,4:00PM EST,+1.0020,+145.64%,631.51M,59.052M
+NVAX,"Novavax, Inc.",83.37,4:00PM EST,+1.74,+2.13%,4.233M,6.303B
+HPQ,HP Inc.,34.36,4:02PM EST,-0.09,-0.26%,17.62M,36.194B
+TSLA,"Tesla, Inc.",870.43,4:00PM EST,+60.56,+7.48%,33.002M,899.598B
+AMC,"AMC Entertainment Holdings, Inc.",18.86,4:00PM EST,+1.20,+6.80%,42.089M,9.681B
+EPAM,"EPAM Systems, Inc.",207.75,4:02PM EST,-174.68,-45.68%,10.115M,11.81B
+UPST,"Upstart Holdings, Inc.",157.99,4:00PM EST,+22.11,+16.27%,17.161M,13.28B
+SOFI,"SoFi Technologies, Inc.",11.45,4:00PM EST,+0.78,+7.31%,64.381M,9.156B
+PLUG,Plug Power Inc.,25.29,4:00PM EST,+2.70,+11.95%,39.976M,14.576B
+MARA,"Marathon Digital Holdings, Inc.",25.35,4:00PM EST,+2.28,+9.88%,20.632M,2.602B
+WDAY,"Workday, Inc.",229.05,4:00PM EST,+3.82,+1.70%,3.994M,57.263B
+SBRCY,Sberbank of Russia,1.2500,3:59PM EST,-3.1800,-71.78%,88.242M,9.394B
+GDRX,"GoodRx Holdings, Inc.",27.40,4:00PM EST,+1.11,+4.22%,2.045M,10.929B
+RIVN,"Rivian Automotive, Inc.",67.56,4:00PM EST,+4.13,+6.51%,19.27M,59.683B
+CRWD,"CrowdStrike Holdings, Inc.",195.21,4:00PM EST,+13.46,+7.41%,8.038M,44.769B
+TSM,Taiwan Semiconductor Manufacturing Company Limited,107.01,4:00PM EST,-4.22,-3.79%,25.866M,554.951B
+DDD,3D Systems Corporation,17.82,4:00PM EST,+0.38,+2.18%,2.566M,2.289B
+VTRS,Viatris Inc.,11.01,4:00PM EST,-3.53,-24.28%,62.844M,13.315B
+EDIT,"Editas Medicine, Inc.",17.12,4:00PM EST,+0.22,+1.30%,1.813M,1.173B
+GME,GameStop Corp.,123.34,4:00PM EST,+4.76,+4.01%,1.599M,9.417B
+FCEL,"FuelCell Energy, Inc.",6.00,4:00PM EST,+0.72,+13.64%,44.902M,2.2B
+TDOC,"Teladoc Health, Inc.",75.91,4:00PM EST,+5.17,+7.31%,19.741M,12.181B
+BIGC,"BigCommerce Holdings, Inc.",25.90,4:00PM EST,+0.59,+2.33%,1.884M,1.874B
+NIO,NIO Inc.,22.84,4:05PM EST,+1.90,+9.07%,81.96M,36.329B
+BTC-USD,Bitcoin USD,"43,069.95",3:37AM UTC,"+5,232.77",+13.83%,37.299B,817.081B
+PUBM,"PubMatic, Inc.",30.60,4:00PM EST,+1.46,+5.01%,1.967M,1.57B
+FHN,First Horizon Corporation,23.48,4:00PM EST,+5.23,+28.66%,99.449M,12.538B
+CTIC,CTI BioPharma Corp.,1.9000,4:00PM EST,-0.4700,-19.83%,4.858M,183.716M
