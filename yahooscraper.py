@@ -218,6 +218,30 @@ def scrape_yahoo_calendar(event_types, date_param):
         else:
             print("No data found for event : {} & date : {}".format(event, date_param))
 
+def send_email(body):
+  try:
+    server_ssl = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+    server_ssl.ehlo()   
+
+    SENDER_EMAIL = 'sendsometrends@gmail.com'
+    RECEIVER_EMAIL = 'sendsometrends@gmail.com'
+    SENDER_PASSWORD = os.environ['GMAIL_PASSWORD']
+    
+    subject = 'YouTube Trending Videos'
+
+    email_text = f"""
+    From: {SENDER_EMAIL}
+    To: {RECEIVER_EMAIL}
+    Subject: {subject}
+    {body}
+    """
+
+    server_ssl.login(SENDER_EMAIL, SENDER_PASSWORD)
+    server_ssl.sendmail(SENDER_EMAIL, RECEIVER_EMAIL, email_text)
+    server_ssl.close()
+
+  except:
+      print('Something went wrong...')
 
 if __name__ == "__main__" :
 
