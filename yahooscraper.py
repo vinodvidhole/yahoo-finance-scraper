@@ -19,6 +19,9 @@ import json
 from io import StringIO
 from IPython.display import display
 
+#4
+import smtplib
+
 BASE_URL = 'https://finance.yahoo.com' #Global Variable 
 
 #1
@@ -223,11 +226,11 @@ def send_email(body):
     server_ssl = smtplib.SMTP_SSL('smtp.gmail.com', 465)
     server_ssl.ehlo()   
 
-    SENDER_EMAIL = 'sendsometrends@gmail.com'
-    RECEIVER_EMAIL = 'sendsometrends@gmail.com'
+    SENDER_EMAIL = 'sendscrapedata@gmail.com'
+    RECEIVER_EMAIL = 'sendscrapedata@gmail.com'
     SENDER_PASSWORD = os.environ['GMAIL_PASSWORD']
     
-    subject = 'YouTube Trending Videos'
+    subject = 'Yahoo! Finance web scraping'
 
     email_text = f"""
     From: {SENDER_EMAIL}
@@ -244,7 +247,7 @@ def send_email(body):
       print('Something went wrong...')
 
 if __name__ == "__main__" :
-
+    
     YAHOO_NEWS_URL = BASE_URL+'/topic/stock-market-news/'
     news_df = scrape_yahoo_news(YAHOO_NEWS_URL)
 
@@ -256,5 +259,7 @@ if __name__ == "__main__" :
     date_param = '2022-02-28'
     event_types = ['splits','economic','ipo','earnings']
     scrape_yahoo_calendar(event_types, date_param)
+    
+    send_email('test email')
 
 print("Processing Done")
