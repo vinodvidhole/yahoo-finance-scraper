@@ -58,7 +58,6 @@ def scrape_yahoo_news(url, path=None):
     """Get the yahoo finance market news and write them to CSV file """
     if path is None:
         path = 'stock-market-news.csv'
-        
     print('Requesting html page')
     doc = get_page(url)
     print('Extracting news tags')
@@ -68,8 +67,8 @@ def scrape_yahoo_news(url, path=None):
     print('Save the data to a CSV')
     news_df = pd.DataFrame(news_data)
     news_df.to_csv(path, index=None)
-    #This return statement is optional, we are doing this just analyze the final output 
     display(news_df.head())
+    #This return statement is optional, we are doing this just analyze the final output 
     return news_df 
 
 #2
@@ -79,7 +78,9 @@ def get_driver(url):
     chrome_options.add_argument('--no-sandbox')
     chrome_options.add_argument('--disable-dev-shm-usage')
     chrome_options.add_argument('--headless')
-    #serv = Service(ChromeDriverManager().install())
+    chrome_options.add_argument('--start-maximized') #
+    chrome_options.add_argument('--start-fullscreen')#
+    chrome_options.add_argument('--single-process')#
     serv = Service(os.getcwd()+'/chromedriver')
     driver = webdriver.Chrome(options=chrome_options, service=serv)
     driver.get(url)
@@ -140,9 +141,9 @@ def scrape_yahoo_crypto(url, total_crypto, path=None):
     driver = get_driver(url)    
     table_data = parse_multiple_pages(driver, total_crypto)
     driver.close()
+    driver.quit()
     print('Save the data to a CSV')
     table_df = pd.DataFrame(table_data)
-    #print(table_df)
     table_df.to_csv(path, index=None)
     #This return statement is optional, we are doing this just analyze the final output 
     display(table_df.head())
@@ -221,31 +222,6 @@ def scrape_yahoo_calendar(event_types, date_param):
         else:
             print("No data found for event : {} & date : {}".format(event, date_param))
 
-def send_email(body):
-  try:
-    server_ssl = smtplib.SMTP_SSL('smtp.gmail.com', 465)
-    server_ssl.ehlo()   
-
-    SENDER_EMAIL = 'sendscrapedata@gmail.com'
-    RECEIVER_EMAIL = 'sendscrapedata@gmail.com'
-    SENDER_PASSWORD = os.environ['GMAIL_PASSWORD']
-    
-    subject = 'Yahoo! Finance web scraping'
-
-    email_text = f"""
-    From: {SENDER_EMAIL}
-    To: {RECEIVER_EMAIL}
-    Subject: {subject}
-    {body}
-    """
-
-    server_ssl.login(SENDER_EMAIL, SENDER_PASSWORD)
-    server_ssl.sendmail(SENDER_EMAIL, RECEIVER_EMAIL, email_text)
-    server_ssl.close()
-
-  except:
-      print('Something went wrong...')
-
 if __name__ == "__main__" :
     
     YAHOO_NEWS_URL = BASE_URL+'/topic/stock-market-news/'
@@ -259,7 +235,5 @@ if __name__ == "__main__" :
     date_param = '2022-02-28'
     event_types = ['splits','economic','ipo','earnings']
     scrape_yahoo_calendar(event_types, date_param)
-    
-    send_email('test email')
 
 print("Processing Done")
