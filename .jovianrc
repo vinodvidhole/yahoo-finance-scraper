@@ -1,14 +1,5 @@
 {
   "notebooks": {
-    "tag-scrape-yahoo-finance-news.ipynb": {
-      "slug": "8c7cc08b5cc149e7bc6c7e63bc7238b5"
-    },
-    "json-scrap-yahoo-finance-market-calendar.ipynb": {
-      "slug": "efd8a6eb168049328c4fb8a4511e103e"
-    },
-    "selenium-scrape-yahoo-finance-trending-tickers.ipynb": {
-      "slug": "a27f5c9679504934ae734363c6a3b607"
-    },
     "yahoo-finance-web-scraper.ipynb": {
       "slug": "27835c12084246f1bb291c032a63e8e2"
     }
